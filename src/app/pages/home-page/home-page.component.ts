@@ -40,6 +40,16 @@ export class HomePageComponent {
       visible: true,
     },
     {
+      label: 'LinkedIn',
+      href: 'https://linkedin.com/in/adriangegner',
+      visible: true,
+    },
+    {
+      label: 'XING',
+      href: 'https://www.xing.com/profile/Adrian_Gegner',
+      visible: true,
+    },
+    {
       label: 'CV',
       href: 'https://rxresu.me/gegner-io/cv',
       visible: false,
