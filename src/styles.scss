@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root {
+	color-scheme: light;
+	--bg: #f5efe6;
+	--bg-strong: #e6d6c3;
+	--surface: rgba(255, 250, 244, 0.72);
+	--surface-strong: rgba(255, 250, 244, 0.92);
+	--line: rgba(58, 34, 20, 0.14);
+	--text: #23150d;
+	--muted: #6e5446;
+	--accent: #c4572e;
+	--accent-deep: #8d2f15;
+	--shadow: 0 24px 80px rgba(54, 32, 20, 0.12);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+	color: var(--text);
+	background:
+		radial-gradient(circle at top left, rgba(196, 87, 46, 0.18), transparent 32%),
+		radial-gradient(circle at right 20%, rgba(141, 47, 21, 0.1), transparent 22%),
+		linear-gradient(180deg, #f7f1e9 0%, var(--bg) 45%, #efe2d1 100%);
+}
+
+a {
+	color: inherit;
+}
+
+p {
+	margin: 0;
+}
+
+.page-shell {
+	width: min(1120px, calc(100% - 2rem));
+	margin: 0 auto;
+	padding: 4rem 0 5rem;
+}
+
+.hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
+	gap: 1.5rem;
+	align-items: stretch;
+}
+
+.hero-copy,
+.hero-panel,
+.info-card,
+.notes {
+	border: 1px solid var(--line);
+	background: var(--surface);
+	backdrop-filter: blur(18px);
+	box-shadow: var(--shadow);
+}
+
+.hero-copy {
+	padding: 2.5rem;
+	border-radius: 32px;
+}
+
+.eyebrow,
+.panel-label,
+.card-label,
+.notes-kicker {
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-size: 0.78rem;
+	color: var(--accent-deep);
+}
+
+.hero h1,
+.notes h2 {
+	margin: 0.5rem 0 1rem;
+	font-family: 'Newsreader', Georgia, serif;
+	font-weight: 700;
+	line-height: 0.94;
+	letter-spacing: -0.03em;
+}
+
+.hero h1 {
+	font-size: clamp(3.6rem, 9vw, 7rem);
+	max-width: 9ch;
+}
+
+.lead,
+.intro,
+.card-value,
+.notes p {
+	color: var(--muted);
+	line-height: 1.65;
+}
+
+.lead {
+	max-width: 32rem;
+	font-size: 1.18rem;
+}
+
+.intro {
+	max-width: 35rem;
+	margin-top: 1rem;
+}
+
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.85rem;
+	margin-top: 2rem;
+}
+
+.button-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0.75rem 1.2rem;
+	border-radius: 999px;
+	border: 1px solid rgba(141, 47, 21, 0.2);
+	background: var(--surface-strong);
+	text-decoration: none;
+	transition:
+		transform 180ms ease,
+		border-color 180ms ease,
+		background-color 180ms ease;
+}
+
+.button-link:hover,
+.button-link:focus-visible {
+	transform: translateY(-2px);
+	border-color: rgba(141, 47, 21, 0.45);
+	background: #fff7ef;
+}
+
+.hero-panel {
+	padding: 2rem;
+	border-radius: 28px;
+	position: relative;
+	overflow: hidden;
+}
+
+.hero-panel::after {
+	content: '';
+	position: absolute;
+	inset: auto -2rem -3rem auto;
+	width: 11rem;
+	height: 11rem;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(196, 87, 46, 0.18), transparent 70%);
+}
+
+.chip-list {
+	list-style: none;
+	padding: 0;
+	margin: 1.2rem 0 0;
+	display: grid;
+	gap: 0.85rem;
+}
+
+.chip-list li {
+	padding: 1rem 1.1rem;
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.55);
+	border: 1px solid rgba(58, 34, 20, 0.08);
+}
+
+.grid-section {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.info-card,
+.notes {
+	border-radius: 24px;
+}
+
+.info-card {
+	padding: 1.4rem;
+}
+
+.card-value {
+	margin-top: 0.8rem;
+}
+
+.notes {
+	margin-top: 1rem;
+	padding: 2rem;
+}
+
+.notes h2 {
+	font-size: clamp(2rem, 5vw, 3.6rem);
+	max-width: 11ch;
+}
+
+.reveal {
+	opacity: 0;
+	transform: translateY(18px);
+	animation: rise-in 700ms ease forwards;
+}
+
+.reveal-delay-1 {
+	animation-delay: 80ms;
+}
+
+.reveal-delay-2 {
+	animation-delay: 180ms;
+}
+
+.reveal-delay-3 {
+	animation-delay: 280ms;
+}
+
+.reveal-delay-4 {
+	animation-delay: 380ms;
+}
+
+@keyframes rise-in {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 900px) {
+	.hero,
+	.grid-section {
+		grid-template-columns: 1fr;
+	}
+
+	.hero h1 {
+		max-width: none;
+	}
+}
+
+@media (max-width: 640px) {
+	.page-shell {
+		width: min(100% - 1.25rem, 1120px);
+		padding: 1rem 0 2rem;
+	}
+
+	.hero-copy,
+	.hero-panel,
+	.notes {
+		padding: 1.5rem;
+	}
+
+	.hero h1 {
+		font-size: clamp(2.8rem, 18vw, 4.5rem);
+	}
+
+	.lead {
+		font-size: 1rem;
+	}
+}

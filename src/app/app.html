@@ -1,0 +1,46 @@
+<main class="page-shell">
+  <section class="hero">
+    <div class="hero-copy reveal reveal-delay-1">
+      <p class="eyebrow">Angular Portfolio Foundation</p>
+      <h1>{{ name }}</h1>
+      <p class="lead">{{ role }}</p>
+      <p class="intro">{{ intro }}</p>
+
+      <div class="actions">
+        @for (link of links; track link.href) {
+          <a class="button-link" [href]="link.href" target="_blank" rel="noreferrer">
+            {{ link.label }}
+          </a>
+        }
+      </div>
+    </div>
+
+    <aside class="hero-panel reveal reveal-delay-2" aria-label="Portfolio highlights">
+      <p class="panel-label">Core focus</p>
+      <ul class="chip-list">
+        @for (area of focusAreas; track area) {
+          <li>{{ area }}</li>
+        }
+      </ul>
+    </aside>
+  </section>
+
+  <section class="grid-section">
+    @for (highlight of highlights; track highlight.label) {
+      <article class="info-card reveal reveal-delay-3">
+        <p class="card-label">{{ highlight.label }}</p>
+        <p class="card-value">{{ highlight.value }}</p>
+      </article>
+    }
+  </section>
+
+  <section class="notes reveal reveal-delay-4">
+    <p class="notes-kicker">Status</p>
+    <h2>The framework is ready. Content comes next.</h2>
+    <p>
+      This starter intentionally focuses on structure first: Angular app, SCSS styling, and a
+      deployable GitHub Pages setup. Replace the placeholder text with your own projects,
+      experience, and contact links.
+    </p>
+  </section>
+</main>
