@@ -6,40 +6,43 @@ import { Component } from '@angular/core';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly name = 'Adrian Gegner';
-  protected readonly role = 'Frontend Developer building thoughtful interfaces with Angular.';
+  protected readonly name = 'Adrian';
+  protected readonly role = 'Versatile developer and tech enthusiast';
   protected readonly intro =
-    'This portfolio runs on Angular and serves as the base for projects, case studies, and the stack behind them.';
+    'I enjoy building practical solutions, from software projects to physical prototypes and rapid prototyping with 3D printing.';
 
-  protected readonly focusAreas = [
-    'Angular applications',
-    'TypeScript architecture',
-    'UI systems and design implementation',
+  protected readonly avatarPath = 'assets/avatar.png';
+  protected readonly avatarAlt = 'Portrait of Adrian';
+
+  protected readonly skills = [
+    'Python, web development and data-driven projects',
+    'Rapid prototyping, 3D design and 3D printing',
+    'Construction, mechanical design and hands-on engineering',
+    'Automating workflows and working with sensors and APIs',
+    'Quick learning of new technologies and pragmatic problem-solving',
   ];
 
-  protected readonly highlights = [
-    {
-      label: 'Current focus',
-      value: 'Building a maintainable portfolio foundation on Angular.',
-    },
-    {
-      label: 'Stack',
-      value: 'Angular 21, SCSS, GitHub Pages deployment via Actions.',
-    },
-    {
-      label: 'Next step',
-      value: 'Replace placeholders with projects, biography, and contact details.',
-    },
+  protected readonly currentlyExploring = [
+    'Combining software and hardware for real-world projects',
+    'Optimizing workflows and processes',
+    'Practical applications of tech in research and engineering',
   ];
+
+  protected readonly collaborationLine =
+    'Open to collaborations, exciting projects and new challenges in software, hardware and tech innovation.';
 
   protected readonly links = [
     {
       label: 'GitHub',
       href: 'https://github.com/gegner-io',
+      visible: true,
     },
     {
-      label: 'Angular',
-      href: 'https://angular.dev',
+      label: 'CV',
+      href: 'https://rxresu.me/gegner-io/cv',
+      visible: false,
     },
   ];
+
+  protected readonly visibleLinks = this.links.filter((link) => link.visible);
 }

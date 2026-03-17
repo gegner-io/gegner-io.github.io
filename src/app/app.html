@@ -1,13 +1,13 @@
 <main class="page-shell">
   <section class="hero">
     <div class="hero-copy reveal reveal-delay-1">
-      <p class="eyebrow">Angular Portfolio Foundation</p>
+      <p class="eyebrow">Hi there</p>
       <h1>{{ name }}</h1>
       <p class="lead">{{ role }}</p>
       <p class="intro">{{ intro }}</p>
 
       <div class="actions">
-        @for (link of links; track link.href) {
+        @for (link of visibleLinks; track link.href) {
           <a class="button-link" [href]="link.href" target="_blank" rel="noreferrer">
             {{ link.label }}
           </a>
@@ -15,32 +15,35 @@
       </div>
     </div>
 
-    <aside class="hero-panel reveal reveal-delay-2" aria-label="Portfolio highlights">
-      <p class="panel-label">Core focus</p>
-      <ul class="chip-list">
-        @for (area of focusAreas; track area) {
-          <li>{{ area }}</li>
-        }
-      </ul>
+    <aside class="hero-panel reveal reveal-delay-2" aria-label="Avatar section">
+      <div class="avatar-frame" role="img" aria-label="Avatar placeholder">
+        <img [src]="avatarPath" [alt]="avatarAlt" />
+      </div>
+      <p class="avatar-note">Ideas are good. Building them is better.</p>
     </aside>
   </section>
 
-  <section class="grid-section">
-    @for (highlight of highlights; track highlight.label) {
-      <article class="info-card reveal reveal-delay-3">
-        <p class="card-label">{{ highlight.label }}</p>
-        <p class="card-value">{{ highlight.value }}</p>
-      </article>
-    }
+  <section class="info-card reveal reveal-delay-3" aria-label="Skills and interests">
+    <p class="card-label">Skills and interests</p>
+    <ul class="chip-list">
+      @for (skill of skills; track skill) {
+        <li>{{ skill }}</li>
+      }
+    </ul>
+  </section>
+
+  <section class="info-card reveal reveal-delay-3" aria-label="Currently exploring">
+    <p class="card-label">Currently exploring</p>
+    <ul class="chip-list">
+      @for (topic of currentlyExploring; track topic) {
+        <li>{{ topic }}</li>
+      }
+    </ul>
   </section>
 
   <section class="notes reveal reveal-delay-4">
-    <p class="notes-kicker">Status</p>
-    <h2>The framework is ready. Content comes next.</h2>
-    <p>
-      This starter intentionally focuses on structure first: Angular app, SCSS styling, and a
-      deployable GitHub Pages setup. Replace the placeholder text with your own projects,
-      experience, and contact links.
-    </p>
+    <p class="notes-kicker">Open to collaborate</p>
+    <h2>Let us build useful things.</h2>
+    <p>{{ collaborationLine }}</p>
   </section>
 </main>
