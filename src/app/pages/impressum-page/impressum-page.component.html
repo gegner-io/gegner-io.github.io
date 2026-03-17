@@ -1,0 +1,23 @@
+<main class="page-shell">
+  <section class="info-card reveal reveal-delay-1" aria-label="Impressum">
+    <p class="card-label">Impressum</p>
+    <p><strong>Angaben gemäß § 5 DDG</strong></p>
+    <p>{{ legalName }}</p>
+    <p>{{ legalAddress.street }}</p>
+    <p>{{ legalAddress.postalCode }} {{ legalAddress.city }}</p>
+    <p>{{ legalAddress.country }}</p>
+    <p>
+      E-Mail: gegner [at] me.com
+    </p>
+    <p>
+      Telefon: {{ legalContact.phone }}
+    </p>
+  </section>
+
+  <footer class="legal-footer" aria-label="Rechtliche Links">
+    <nav class="legal-links" aria-label="Rechtliche Seiten">
+      <a routerLink="/">Zur Startseite</a>
+      <a routerLink="/datenschutz">Datenschutz</a>
+    </nav>
+  </footer>
+</main>

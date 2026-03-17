@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.legal-footer {
+  margin-top: 1.25rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.legal-links {
+  display: inline-flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.legal-links a {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-underline-offset: 0.2rem;
+}

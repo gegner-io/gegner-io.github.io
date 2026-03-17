@@ -1,0 +1,56 @@
+<main class="page-shell">
+  <section class="hero">
+    <div class="hero-copy reveal reveal-delay-1">
+      <p class="eyebrow">Hi there</p>
+      <h1>{{ name }}</h1>
+      <p class="lead">{{ role }}</p>
+      <p class="intro">{{ intro }}</p>
+
+      <div class="actions">
+        @for (link of visibleLinks; track link.href) {
+          <a class="button-link" [href]="link.href" target="_blank" rel="noreferrer">
+            {{ link.label }}
+          </a>
+        }
+      </div>
+    </div>
+
+    <aside class="hero-panel reveal reveal-delay-2" aria-label="Avatar section">
+      <div class="avatar-frame" role="img" aria-label="Avatar placeholder">
+        <img [src]="avatarPath" [alt]="avatarAlt" />
+      </div>
+      <p class="avatar-note">Ideas are good. Building them is better.</p>
+    </aside>
+  </section>
+
+  <section class="info-card reveal reveal-delay-3" aria-label="Skills and interests">
+    <p class="card-label">Skills and interests</p>
+    <ul class="chip-list">
+      @for (skill of skills; track skill) {
+        <li>{{ skill }}</li>
+      }
+    </ul>
+  </section>
+
+  <section class="info-card reveal reveal-delay-3" aria-label="Currently exploring">
+    <p class="card-label">Currently exploring</p>
+    <ul class="chip-list">
+      @for (topic of currentlyExploring; track topic) {
+        <li>{{ topic }}</li>
+      }
+    </ul>
+  </section>
+
+  <section class="notes reveal reveal-delay-4">
+    <p class="notes-kicker">Open to collaborate</p>
+    <h2>Let us build useful things.</h2>
+    <p>{{ collaborationLine }}</p>
+  </section>
+
+  <footer class="legal-footer" aria-label="Rechtliche Links">
+    <nav class="legal-links" aria-label="Rechtliche Seiten">
+      <a routerLink="/impressum">Impressum</a>
+      <a routerLink="/datenschutz">Datenschutz</a>
+    </nav>
+  </footer>
+</main>
